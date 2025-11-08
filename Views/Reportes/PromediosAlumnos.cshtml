@@ -1,0 +1,41 @@
+﻿@model dynamic
+@{
+    ViewData["Title"] = "Promedios de Alumnos";
+}
+
+<div class="container mt-4">
+    <h2>@ViewData["Title"]</h2>
+
+    <div class="table-responsive">
+        <table class="table table-striped table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>Alumno</th>
+                    <th>Promedio</th>
+                    <th>Materias Cursadas</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in ViewBag.Promedios)
+                {
+                    <tr>
+                        <td>@item.Alumno.NombreCompleto</td>
+                        <td>@item.Promedio.ToString("F2")</td>
+                        <td>@item.CantidadMaterias</td>
+                        <td>
+                            @if (item.Promedio >= 70)
+                            {
+                                <span class="badge bg-success">Aprobado</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-danger">Reprobado</span>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

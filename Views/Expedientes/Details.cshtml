@@ -1,0 +1,40 @@
+﻿@model ColegioSanJose.Models.Expediente
+
+@{
+    ViewData["Title"] = "Detalles del Expediente";
+}
+
+<div class="container mt-4">
+    <div class="card shadow-sm mx-auto" style="max-width: 600px;">
+        <div class="card-header bg-info text-white">
+            <h4><i class="bi bi-eye"></i> @ViewData["Title"]</h4>
+        </div>
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-4">Alumno:</dt>
+                <dd class="col-sm-8">@Model.Alumno?.NombreCompleto</dd>
+
+                <dt class="col-sm-4">Materia:</dt>
+                <dd class="col-sm-8">@Model.Materia?.Nombre</dd>
+
+                <dt class="col-sm-4">Nota Final:</dt>
+                <dd class="col-sm-8">@Model.NotaFinal.ToString("F2")</dd>
+
+                <dt class="col-sm-4">Observaciones:</dt>
+                <dd class="col-sm-8">@Model.Observaciones</dd>
+
+                <dt class="col-sm-4">Fecha Inscripción:</dt>
+                <dd class="col-sm-8">@Model.FechaInscripcion.ToString("dd/MM/yyyy")</dd>
+            </dl>
+
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning me-2">
+                    <i class="bi bi-pencil"></i> Editar
+                </a>
+                <a asp-action="Index" class="btn btn-secondary">
+                    <i class="bi bi-arrow-left"></i> Volver
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

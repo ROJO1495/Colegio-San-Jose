@@ -1,0 +1,76 @@
+﻿@{
+    ViewBag.Title = "Colegio San José";
+}
+
+<div class="text-center">
+    <h1 class="display-4 mb-5">Colegion San José</h1>
+    <div class="row justify-content-center">
+
+        <!--Agregar alumnos-->
+        <div class="col-md-5 mb-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Agregar alumnos</h5>
+                    <p class="card-text">Registrar estudiantes al sistema</p>
+                    <a href="@Url.Action("Create", "Alumnos")" class="btn btn-primary">Ingresar</a>
+                </div>
+            </div>
+        </div>
+
+        <!--Editar alumnos-->
+        <div class="col-md-5 mb-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Editar o eliminar Alumnos</h5>
+                    <p class="card-text">Modificar estudiantes existentes</p>
+                    <a href="@Url.Action("Index", "Alumnos")" class="btn btn-warning">Ingresar</a>
+                </div>
+            </div>
+        </div>
+
+        <!--Materias-->
+        <div class="col-md-5 mb-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Materias</h5>
+                    <p class="card-text">Pensum</p>
+                    <a href="@Url.Action("Index", "Materias")" class="btn btn-success">Ingresar</a>
+                </div>
+            </div>
+        </div>
+
+        <!--Expedientes-->
+        <div class="col-md-5 mb-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Expedientes</h5>
+                    <p class="card-text">Nombre completo de los alumnos, nombres de las materias que llevan, notas y observaciones</p>
+                    <a href="@Url.Action("Index", "Expedientes")" class="btn btn-success">Ingresar</a>
+                </div>
+            </div>
+        </div>
+
+        <!--Promedios-->
+        <div class="col-md-5 mb-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Promedios de Alumnos</h5>
+                    <p class="card-text">Ver promedios y estado académico de estudiantes</p>
+                    <a href="@Url.Action("PromediosAlumnos", "Reportes")" class="btn btn-info text-white">Ingresar</a>
+                </div>
+            </div>
+        </div>
+
+        <!--Estadisticas-->
+        <div class="col-md-5 mb-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Estadisticas</h5>
+                    <p class="card-text">Estadisticas del promedio de los alumnos</p>
+                    <a href="@Url.Action("GraficasPromedios", "Reportes")" class="btn btn-info text-white">Ingresar</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
